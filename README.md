@@ -1,41 +1,34 @@
-# Taskboard
+Taskboard
 
-Sistema de gerenciamento de tarefas estilo Kanban desenvolvido em **Java 24** com **Spring Boot** e **MySQL**.
+Sistema de gerenciamento de tarefas no estilo Kanban, desenvolvido em Java 24, utilizando Spring Boot e MySQL.
+O projeto funciona via linha de comando (CLI) e permite criar boards, colunas e tarefas, mantendo tudo salvo no banco de dados.
 
----
+Recursos Principais
 
-## Funcionalidades
-- Criar boards com colunas padrão: Inicial, Final e Cancelada
-- Listar e selecionar boards
-- Criar, listar, mover, cancelar, bloquear e desbloquear tarefas
-- Persistência de dados com MySQL
+Criar boards com colunas padrão: Inicial, Final e Cancelada
 
----
+Listar e selecionar boards existentes
 
-## Tecnologias
-- Java 24
-- Spring Boot 3.5.5
-- Spring Data JPA / Hibernate
-- MySQL 8.0+
-- HikariCP
-- Maven
+Criar novas tarefas
 
----
+Listar tarefas por coluna
 
-## Modelagem
+Mover tarefas entre colunas
 
-**Board:** `id`, `name`, `columns` (List<BoardColumn>)  
-**BoardColumn:** `id`, `name`, `type` (INITIAL, FINAL, CANCEL), `columnOrder`, `board`, `tasks` (List<Task>)  
-**Task:** `id`, `title`, `description`, `blocked`, `blockReason`, `unblockReason`, `column` (BoardColumn)
+Cancelar, bloquear e desbloquear tarefas
 
----
+Persistência completa com MySQL
 
-## Estrutura do Projeto
-taskboard/
-├─ src/main/java/com/rian/taskboard/taskboard/
-│ ├─ model/ # Entidades JPA
-│ ├─ repository/ # Repositórios
-│ ├─ service/ # Serviços
-│ ├─ TaskboardApp.java # CLI Runner
-│ └─ TaskboardApplication.java # Main
-└─ src/main/resources/application.properties
+Tecnologias Utilizadas
+
+Java 24
+
+Spring Boot 3.5.5
+
+Spring Data JPA / Hibernate
+
+MySQL 8.0+
+
+HikariCP
+
+Maven
